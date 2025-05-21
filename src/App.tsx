@@ -1,24 +1,34 @@
-// import ViteIntro from "./pages/ViteIntro.tsx";
+// import ClassComponent from "./components/ClassComponent.tsx";
+// import FunctionalComponent from "./components/FunctionalComponent.tsx";
+// import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
+// import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
+// import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
+import Layout from "./components/Layout.tsx";
+// import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
+import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 
-import ClassComponent from "./components/ClassComponent.tsx";
-import FunctionalComponent from "./components/FunctionalComponent.tsx";
-import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
-import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
-import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
 
 function App() {
 
+    return (
+        <>
+            <Layout>
+                {/*<ClassComponent/>*/}
+                {/*<FunctionalComponent/>*/}
+                {/*<ArrowFunctionalComponent/>*/}
+                {/*<ArrowFunctionalComponentWithProps title="Is a Arrow Functional Component with Props!"/>*/}
+                {/*<ArrowFunctionalComponentWithPropsType*/}
+                {/*  title="Is a Arrow Functional Component with Props!"*/}
+                {/*  description="this is a description"*/}
+                {/*/>*/}
 
-  return (
-    <>
-        <ClassComponent/>
-        <FunctionalComponent/>
-        <ArrowFunctionalComponent/>
-        <ArrowFunctionalComponentWithProps title="Is a ArrowFunctional Component with Props" />
-        <ArrowFunctionalComponentWithPropsType title="Is a ArrowFunctional Component with Props" description="This is a description" />
+                {/*<ClassComponentWithState/>*/}
+                <FunctionalComponentWithState/>
 
-    </>
-  )
+
+            </Layout>
+        </>
+    )
 }
 
 export default App
