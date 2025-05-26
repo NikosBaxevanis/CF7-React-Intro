@@ -4,9 +4,12 @@
 // import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
 // import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
 import Layout from "./components/Layout.tsx";
+import CounterAdvanced from "./components/CounterAdvanced.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 // FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
-import Counter from "./components/Counter.tsx";
+//import Counter from "./components/Counter.tsx";
+//import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
+//import NameChanger from "./components/NameChanger.tsx";
 
 
 function App() {
@@ -24,9 +27,10 @@ function App() {
                 {/*/>*/}
 
                 {/*<ClassComponentWithState/>*/}
-                <Counter/>
-
-
+               {/*<Counter/>*/}
+               {/* <NameChanger/>*/}
+               {/* <CounterWithMoreStates/>*/}
+                <CounterAdvanced/>
             </Layout>
         </>
     )
