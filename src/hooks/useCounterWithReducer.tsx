@@ -1,16 +1,15 @@
-import {useReducer} from "react";
+import { useReducer } from 'react';
 
-type CounterState = {
+type CounterState ={
     count: number;
     lastAction: string;
     time: string;
-};
-
+}
 
 type Action =
-    | {type:"INCREASE"}
-    | {type:"DECREASE"}
-    | {type:"RESET"};
+    | {type: "INCREASE"}
+    | {type: "DECREASE"}
+    | {type: "RESET"};
 
 const initialState: CounterState = {
     count: 0,
@@ -18,38 +17,42 @@ const initialState: CounterState = {
     time: "",
 }
 
+const getCurrentTime = () => new Date().toLocaleTimeString();
 
-const getCurrentTime = () => new Date().toLocaleTimeString()
-
-function reducer(state: CounterState, action: Action): CounterState{
-    switch(action.type) {
+function reducer(state:CounterState, action:Action): CounterState {
+    switch (action.type) {
         case "INCREASE":
             return {
                 count: state.count + 1,
                 lastAction: "Increase",
                 time: getCurrentTime(),
-            }
-            case "DECREASE":
-                return {
+            };
+        case "DECREASE":
+            return state.count > 0
+                ? {
                     count: state.count - 1,
                     lastAction: "Decrease",
                     time: getCurrentTime(),
                 }
-                case "RESET":
-                    return {
-                        count: 0,
-                        lastAction: "Reset",
-                        time: getCurrentTime()
-                    }
+                : state;
+        case "RESET":
+            return {
+                count: 0,
+                lastAction: "Reset",
+                time: getCurrentTime(),
+            };
+        default:
+            return state;
     }
 }
 
 export const useCounterWithReducer = () => {
-    const [state,dispatch] = useReducer(reducer, initialState);
 
-    const increase = () => dispatch({type:"INCREASE"});
-    const decrease = () => dispatch({type:"DECREASE"});
-    const reset = () => dispatch({type:"RESET"});
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const increase = () => dispatch({type: "INCREASE"});
+    const decrease = () => dispatch({type: "DECREASE"});
+    const reset = () => dispatch({type: "RESET"});
 
     return {
         count: state.count,
@@ -58,5 +61,6 @@ export const useCounterWithReducer = () => {
         increase,
         decrease,
         reset,
-    }
-}
+    };
+};
+
