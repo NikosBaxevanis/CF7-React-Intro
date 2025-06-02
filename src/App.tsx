@@ -8,14 +8,21 @@ import Layout from "./components/Layout.tsx";
 // import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 // import Counter from "./components/Counter.tsx";
 // import NameChanger from "./components/NameChanger.tsx";
+// import { useEffect } from "react";
 // import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 // import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
 // import CounterAdvanced from "./components/CounterAdvanced.tsx";
 // import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook";
 // import CounterWithReducer from "./components/CounterWithReducer.tsx";
-import Todo from "./components/ToDoList/Todo.tsx";
+// import Todo from "./components/Todo/Todo.tsx";
+import OnlineStatus from "./components/OnlineStatus.tsx";
 
 function App() {
+    //
+    // useEffect(() => {
+    //     const id: number = setInterval(() => console.log("tick"), 1000);
+    //     return () => clearInterval(id);
+    // }, []);
 
     return (
         <>
@@ -39,7 +46,9 @@ function App() {
                 {/*<CounterAdvancedWithCustomHook/>*/}
 
                 {/*<CounterWithReducer/>*/}
-                <Todo/>
+                {/*<Todo/>*/}
+
+                <OnlineStatus/>
 
             </Layout>
         </>
