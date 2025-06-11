@@ -27,6 +27,9 @@ import ExamplesPage from "./pages/ExamplesPage.tsx";
 import RouterExamplesLayout from "./components/RouterExamplesLayout";
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
+import FocusInput from "./components/FocusInput.tsx";
+import UncontrolledInput from "./components/UncontrolledInput.tsx";
+import ControlledInput from "./components/ControlledInput.tsx";
 
 function App() {
 
@@ -78,6 +81,9 @@ function App() {
                         <Route path="name-changer" element={<NameChangerPage/>}/>
                         <Route path="online-status" element={<OnlineStatusPage/>}/>
                         <Route path="auto-redirect" element={<AutoRedirectPage/>}/>
+                        <Route path="controlled-input" element={<ControlledInput />}/>
+                        <Route path="uncontrolled-input" element={<UncontrolledInput />}/>
+                        <Route path="focus-input" element={<FocusInput />}/>
                     </Route>
 
                     <Route path="users/:userId" element={<UserPage />}/>
