@@ -43,6 +43,22 @@ function App() {
     //   return () => clearInterval(id);
     // }, []);
 
+    // async  function fetchData (url , method = "GET" , payload = null) {
+    //     try {
+    //         const options = {
+    //             method,
+    //             headers: {'Content-Type': 'application/json'},
+    //         }
+    //
+    //         if (payload) options.body = JSON.stringify(payload);
+    //         const res = await fetch(url, options);
+    //         if (!res.ok) throw new Error(res.statusText);
+    //
+    //         return await res.json();
+    //     }
+    // }
+
+
     return (
         <>
             {/*<Layout>*/}
