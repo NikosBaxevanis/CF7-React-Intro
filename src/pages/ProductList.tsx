@@ -8,7 +8,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import type {Product} from "@/api/products.ts";
+import type {ProductType} from "@/api/products.ts";
 import {getProducts, deleteProduct} from "@/api/products.ts";
 import {Button} from "@/components/ui/button.tsx";
 import {useNavigate} from "react-router";
@@ -16,8 +16,8 @@ import {Pencil, Trash} from "lucide-react";
 import {toast} from "sonner";
 
 const ProductList = () => {
-    const [products, setProducts] = useState<Product[]>([])
-    const [loading, setloading] = useState<boolean>(true);
+    const [products, setProducts] = useState<ProductType[]>([])
+    const [loading, setLoading] = useState<boolean>(true);
     const [deleting, setDeleting] = useState<number | null>(null);
 
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const ProductList = () => {
     useEffect(() => {
         getProducts()
             .then((data) => setProducts(data))
-            .finally(() => setloading(false));
+            .finally(() => setLoading(false));
     }, [])
 
     const handleDelete = async (id: number) => {
@@ -49,7 +49,7 @@ const ProductList = () => {
 
     return (
         <>
-            <div className="p-8 mt-20">
+            <div className="p-8">
                 <Table>
                     <TableCaption>A list of your products.</TableCaption>
                     <TableHeader className="bg-gray-50">
